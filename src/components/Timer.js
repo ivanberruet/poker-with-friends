@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import audio from '../utils/countdown.mp3'
+import audio from '../assets/countdown.mp3'
 
 export default function Timer(props) {
 	const {time, setCurrentLevel, isValid, setIsStarted} = props

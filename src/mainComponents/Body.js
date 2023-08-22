@@ -13,7 +13,7 @@ export default function Body() {
 		<div className='bg-gradient-to-t from-green-900 to-green-600 flex-1 flex flex-col'>
 			<Info time={time} setTime={setTime} currentLevel={currentLevel} isValid={isValid} setIsValid={setIsValid} isStarted={isStarted} />
 			<Timer time={time} setCurrentLevel={setCurrentLevel} isValid={isValid} setIsStarted={setIsStarted} />
-			<ExtraInfo />
+			<ExtraInfo isStarted={isStarted} />
 		</div>
 	)
 }

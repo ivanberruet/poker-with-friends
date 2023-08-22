@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../utils/PokerStars.png'
+import logo from '../assets/PokerStars.png'
 
 export default function Header() {
 	return (
