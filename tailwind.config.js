@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
 			backgroundImage: {
-        'bg-poker-table': "url('./assets/poker-table.jpg')",
+        'poker-table': "url('./assets/poker-table.jpg')",
+        'poker-table-big': "url('./assets/poker-table-big.jpg')",
       }
 		},
   },
