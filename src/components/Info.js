@@ -39,7 +39,7 @@ export default function Info(props) {
 	}
 
 	return (
-		<div className='flex-1 flex flex-col justify-center text-white pl-14 text-xl'>
+		<div className='Info | flex-1 flex flex-col justify-center w-full pl-14 text-xl font-semibold text-white'>
 			<div className='w-full py-4'>Tiempo por nivel:
 			 <input 
 			 	id='time' 

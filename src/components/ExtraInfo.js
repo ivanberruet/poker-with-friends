@@ -8,7 +8,7 @@ export default function ExtraInfo(props) {
 	const [players, setPlayers] = useState(7)
 	const [reentry, setReentry] = useState(0)
 	return (
-		<div className='flex-1 text-white text-xl pl-14 flex flex-col gap-4'>
+		<div className='ExtraInfo | w-full flex-1 text-white text-xl pl-14 flex flex-col gap-4 font-semibold'>
 			<label htmlFor="entry">Entrada: $
 				<input 
 					type="text"

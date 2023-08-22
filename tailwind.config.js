@@ -3,9 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
-			colors: {
-				primary: "#1E5C3A",
-			}
+			backgroundImage: {
+        'bg-poker-table': "url('./assets/poker-table.jpg')",
+      }
 		},
   },
   plugins: [],

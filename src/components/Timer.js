@@ -56,27 +56,27 @@ export default function Timer(props) {
   };
 
 	return (
-		<div className="flex-1">
-  <div className="w-full py-4 text-6xl text-white text-center">
-    {`${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`}
-  </div>
-  <div className="flex justify-center gap-10 py-8">
-    <button
-      className="text-white text-xl border border-gray-300 rounded-md px-4 py-2 shadow-md shadow-black inset-4"
-      onClick={isRunning || isPaused ? handleStop : handleStart}
-    >
-      {isRunning || isPaused ? "Detener" : "Iniciar"}
-    </button>
-    {isRunning || isPaused ? (
-      <button
-        className="text-white text-xl border border-gray-300 rounded-md px-4 py-2 shadow-md shadow-black inset-4"
-        onClick={handlePause}
-      >
-        {isPaused ? "Reanudar" : "Pausar"}
-      </button>
-    ) : null}
-  </div>
-</div>
+	<div className="Timer | flex-1 w-full">
+		<div className="w-full py-4 text-6xl text-white text-center">
+			{`${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`}
+		</div>
+		<div className="flex justify-center gap-10 py-8">
+			<button
+				className="text-white text-xl border border-gray-300 rounded-md px-4 py-2 shadow-md shadow-black inset-4"
+				onClick={isRunning || isPaused ? handleStop : handleStart}
+			>
+				{isRunning || isPaused ? "Detener" : "Iniciar"}
+			</button>
+			{isRunning || isPaused ? (
+				<button
+					className="text-white text-xl border border-gray-300 rounded-md px-4 py-2 shadow-md shadow-black inset-4"
+					onClick={handlePause}
+				>
+					{isPaused ? "Reanudar" : "Pausar"}
+				</button>
+			) : null}
+		</div>
+	</div>
 
 	)
 }
