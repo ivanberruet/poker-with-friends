@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import audio from '../utils/countdown.mp3'
 
 export default function Timer(props) {
-	const {time, setCurrentLevel, isValid} = props
+	const {time, setCurrentLevel, isValid, setIsStarted} = props
 
 	const [minutes, setMinutes] = useState(time);
   const [seconds, setSeconds] = useState(0);
@@ -37,6 +37,7 @@ export default function Timer(props) {
 		if (isValid){
 			setMinutes(parseInt(time));
 			setIsRunning(true);
+			setIsStarted(true);
 		}
 	};
 
@@ -45,6 +46,7 @@ export default function Timer(props) {
     setSeconds(0);
     setIsRunning(false);
 		setIsPaused(false);
+		setIsStarted(false);
 		setCurrentLevel(0);
   };
 

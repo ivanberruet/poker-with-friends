@@ -2,7 +2,7 @@ import React, {useRef, useState } from 'react'
 import { blindsLevels } from '../data/blindsLevels'
 
 export default function Info(props) {
-	const {time, setTime, currentLevel, isValid, setIsValid} = props
+	const {time, setTime, currentLevel, isValid, setIsValid, isStarted} = props
 	const userTime = useRef(time)
 
 	const handleBlur = () => {
@@ -36,10 +36,24 @@ export default function Info(props) {
 
 		return border
 	}
+
+	const handleInput = () => {
+		let readonly = isStarted ? true : false
+		return readonly
+	}
 	return (
 		<div className='flex-1 flex flex-col justify-center text-white pl-14 text-xl'>
 			<div className='w-full py-4'>Tiempo por nivel:
-			 <input id='time' type="text" size={2} ref={userTime} defaultValue={time} className={`border ${handleBorder()} outline-none bg-transparent pl-1 w-10 rounded-md`} onChange={()=>setTime(userTime.current.value)} onBlur={()=>handleBlur()} />
+			 <input 
+			 	id='time' 
+				type="text" 
+				size={2} 
+				ref={userTime} 
+				defaultValue={10} 
+				className={`border ${handleBorder()} outline-none bg-transparent pl-1 w-10 rounded-md`} onChange={()=>setTime(userTime.current.value)} 
+				onBlur={()=>handleBlur()}
+				readOnly={handleInput()}
+				 />
 			</div>
 			<div className='w-full py-4'>{`Nivel Actual: ${blindsLevels[currentLevel].smallBlind}/${blindsLevels[currentLevel].bigBlind}`}</div>
 			<div className='w-full py-4'>{`Nivel Siguiente: ${blindsLevels[currentLevel+1].smallBlind}/${blindsLevels[currentLevel+1].bigBlind}`}</div>

@@ -7,11 +7,12 @@ export default function Body() {
 	const [time, setTime] = useState(10)
 	const [currentLevel, setCurrentLevel] = useState(0)
 	const [isValid, setIsValid] = useState(true)
+	const [isStarted, setIsStarted] = useState(false)
 
 	return (
 		<div className='bg-gradient-to-t from-green-900 to-green-600 flex-1 flex flex-col'>
-			<Info time={time} setTime={setTime} currentLevel={currentLevel} isValid={isValid} setIsValid={setIsValid} />
-			<Timer time={time} setCurrentLevel={setCurrentLevel} isValid={isValid} />
+			<Info time={time} setTime={setTime} currentLevel={currentLevel} isValid={isValid} setIsValid={setIsValid} isStarted={isStarted} />
+			<Timer time={time} setCurrentLevel={setCurrentLevel} isValid={isValid} setIsStarted={setIsStarted} />
 			<ExtraInfo />
 		</div>
 	)
