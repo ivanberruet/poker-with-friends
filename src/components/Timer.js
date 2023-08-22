@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import audio from '../assets/countdown.mp3'
 
 export default function Timer(props) {
-	const {time, setCurrentLevel, isValid, setIsStarted} = props
+	const {time, setCurrentLevel, isValid, isStarted, setIsStarted} = props
 
 	const [minutes, setMinutes] = useState(time);
   const [seconds, setSeconds] = useState(0);
@@ -57,8 +57,11 @@ export default function Timer(props) {
 
 	return (
 	<div className="Timer | flex-1 w-full">
-		<div className="w-full py-4 text-6xl text-white text-center">
-			{`${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`}
+		<div className="w-full py-4 text-6xl text-white text-center lg:text-8xl">
+			{isStarted
+				? `${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
+				: "00:00"
+			}
 		</div>
 		<div className="flex justify-center gap-10 py-8">
 			<button

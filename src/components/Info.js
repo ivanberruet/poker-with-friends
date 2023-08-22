@@ -39,21 +39,22 @@ export default function Info(props) {
 	}
 
 	return (
-		<div className='Info | flex-1 flex flex-col justify-center w-full pl-14 text-xl font-semibold text-white'>
-			<div className='w-full py-4'>Tiempo por nivel:
+		<div className='Info | flex-1 flex flex-col justify-center w-full px-14 text-xl font-semibold text-white lg:text-2xl'>
+			<div className='w-full py-4 lg:text-center'>Tiempo por nivel:
 			 <input 
 			 	id='time' 
 				type="text" 
 				size={2} 
 				ref={userTime} 
-				defaultValue={10} 
-				className={`border ${handleBorder()} outline-none bg-transparent pl-1 w-10 rounded-md`} onChange={()=>setTime(userTime.current.value)} 
+				defaultValue={12} 
+				className={`border ${handleBorder()} outline-none bg-transparent pl-1 w-10 rounded-md`} 
+				onChange={()=>setTime(userTime.current.value)} 
 				onBlur={()=>handleBlur()}
 				readOnly={handleReadonly(isStarted)}
-				 /> <span className='text-sm'>(Modificable)</span>
+				 />
 			</div>
-			<div className='w-full py-4'>{`Nivel Actual: ${blindsLevels[currentLevel].smallBlind}/${blindsLevels[currentLevel].bigBlind}`}</div>
-			<div className='w-full py-4'>{`Nivel Siguiente: ${blindsLevels[currentLevel+1].smallBlind}/${blindsLevels[currentLevel+1].bigBlind}`}</div>
+			<div className='w-full py-4 lg:text-center'>{`Nivel Actual: ${blindsLevels[currentLevel].smallBlind}/${blindsLevels[currentLevel].bigBlind}`}</div>
+			<div className='w-full py-4 lg:text-center'>{`Nivel Siguiente: ${blindsLevels[currentLevel+1].smallBlind}/${blindsLevels[currentLevel+1].bigBlind}`}</div>
 		</div>
 	)
 }
