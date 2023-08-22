@@ -13,7 +13,7 @@ export default function TournamentInfo() {
 					<li className='list-inside list-disc marker:text-xl py-1'>1 reingreso permitido hasta antes de quedar solo 2 jugadores en juego ($3.000 el reingreso).</li>
 					<li className='list-inside list-disc marker:text-xl py-1'>Inician con 2500 en fichas cada jugador.</li>
 					<li className='list-inside list-disc marker:text-xl py-1'>Incremento de ciegas cada 12 minutos.</li>
-					<li className='list-inside list-disc marker:text-xl py-1'>2do puesto 15% del poso.</li>
+					<li className='list-inside list-disc marker:text-xl py-1'>2do puesto 15% del pozo.</li>
 					<li className='list-inside list-disc marker:text-xl py-1'>1er puesto gana el resto del pozo (se incorporan los reingresos que se efectuan por los jugares).</li>
 					<li className='list-inside list-disc marker:text-xl py-1 pb-2'>Todos amigos y gente cercana, ambiente muy tranquilo.</li>
 				</ul>
