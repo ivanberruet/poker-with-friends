@@ -8,8 +8,8 @@ export default function GameExtraInfo(props) {
 	const [players, setPlayers] = useState(7)
 	const [reentry, setReentry] = useState(0)
 	return (
-		<div className='ExtraInfo | w-full flex-1 text-white text-xl px-10 font-semibold lg:text-2xl'>
-			<div className='flex flex-col gap-4 mb-4 text-center'>
+		<div className='ExtraInfo | w-full flex-1 text-white text-lg px-10 font-semibold lg:text-2xl'>
+			<div className='grid grid-cols-2 grid-rows-3 grid-flow-col mb-4 gap-1'>
 				<label htmlFor="entry">Entrada: $
 					<input 
 						type="text"
@@ -43,6 +43,8 @@ export default function GameExtraInfo(props) {
 					/>
 				</label>
 				<div>{`Pozo: $${isNaN(players) || isNaN(reentry) ? 0 : (players + reentry) * entry}`}</div>
+				<div>{`1° Puesto: $${(players + reentry) * entry * 0.85}`}</div>
+				<div>{`2° Puesto: $${(players + reentry) * entry * 0.15}`}</div>
 			</div>	
 
 		</div>

@@ -11,8 +11,8 @@ export default function Body() {
 
 	return (
 		<>
-			<div className='Body | flex-1 flex flex-col bg-poker-table bg-cover'>
-				<div className="Overlay | w-full h-full flex flex-col justify-center items-center backdrop-brightness-50">
+			<div className='Body | flex-1 h-full flex flex-col bg-poker-table bg-cover'>
+				<div className="Overlay | w-full flex-1 flex flex-col justify-center items-center backdrop-brightness-50">
 					<GameInfo 
 						time={time} 
 						setTime={setTime} 

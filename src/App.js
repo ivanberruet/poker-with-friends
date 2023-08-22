@@ -4,7 +4,7 @@ import TournamentInfo from "./components/TournamentInfo";
 function App() {
   return (
     <div className="App | flex flex-col">
-			<div className="Container | h-screen flex flex-col">
+			<div className="Container | min-h-screen flex flex-col">
 				<Header />
 				<Body />
 			</div>
