@@ -57,7 +57,7 @@ export default function ExtraInfo(props) {
 					<li className='list-inside list-disc marker:text-xl py-1'>1er puesto gana el resto del pozo (se incorporan los reingresos que se efectuan por los jugares).</li>
 					<li className='list-inside list-disc marker:text-xl py-1 pb-2'>Todos amigos y gente cercana, ambiente muy tranquilo.</li>
 				</ul>
-				<div><span className='underline underline-offset-4 text-center'>Ganadores</span>
+				<div className='py-4'><span className='underline underline-offset-4 text-center'>Ganadores</span>
 				<ul className='flex flex-col text-base'>
 					<li className='py-1 pt-2'>Sebastián Benitez: 3 <FontAwesomeIcon icon={faCrown} className='text-yellow-400 ml-1' /></li>
 					<li className='py-1'>Iván Berruet: 1</li>
