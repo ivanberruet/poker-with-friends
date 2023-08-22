@@ -27,7 +27,7 @@ export default function Timer(props) {
         } else {
           setSeconds((prevSeconds) => prevSeconds - 1);
         }
-      }, 1000);
+      }, 100);
     }
 
     return () => clearInterval(intervalId);
