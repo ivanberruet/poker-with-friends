@@ -4,7 +4,7 @@ import GameExtraInfo from '../components/GameExtraInfo'
 import Timer from '../components/Timer'
 
 export default function Body() {
-	const [time, setTime] = useState(12)
+	const [time, setTime] = useState(15)
 	const [currentLevel, setCurrentLevel] = useState(0)
 	const [isValid, setIsValid] = useState(true)
 	const [isStarted, setIsStarted] = useState(false)

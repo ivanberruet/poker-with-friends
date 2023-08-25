@@ -57,7 +57,7 @@ export default function Timer(props) {
 
 	return (
 	<div className="Timer | flex-1 w-full">
-		<div className="w-full py-4 text-6xl text-white text-center lg:text-8xl">
+		<div className="w-full py-4 text-6xl text-white text-center lg:text-[10rem]">
 			{isStarted
 				? `${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
 				: "00:00"
@@ -65,14 +65,15 @@ export default function Timer(props) {
 		</div>
 		<div className="flex justify-center gap-10 py-8">
 			<button
-				className="text-white text-xl border border-gray-300 rounded-md px-4 py-2 shadow-md shadow-black inset-4"
+				disabled={isStarted}
+				className="text-white text-xl border border-gray-300 rounded-md px-4 py-2 shadow-md shadow-black inset-4 lg:text-4xl"
 				onClick={isRunning || isPaused ? handleStop : handleStart}
 			>
 				{isRunning || isPaused ? "Detener" : "Iniciar"}
 			</button>
 			{isRunning || isPaused ? (
 				<button
-					className="text-white text-xl border border-gray-300 rounded-md px-4 py-2 shadow-md shadow-black inset-4"
+					className="text-white text-xl border border-gray-300 rounded-md px-4 py-2 shadow-md shadow-black inset-4 lg:text-4xl"
 					onClick={handlePause}
 				>
 					{isPaused ? "Reanudar" : "Pausar"}
