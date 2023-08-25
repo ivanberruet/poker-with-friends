@@ -48,25 +48,27 @@ export default function HistoricalTable() {
   });
 
   return (
-    <table className='mt-2 border border-collapse lg:mt-4'>
-      <thead>
-        <tr className=''>
-          <th className='border pl-1 text-lg'>Jugador</th>
-          <th className='border pl-1'><FontAwesomeIcon icon={faTrophy} className='text-gold px-1' /></th>
-          <th className='border pl-1'><FontAwesomeIcon icon={faTrophy} className='text-silver px-1' /></th>
-          <th className='border pl-1'><FontAwesomeIcon icon={faTrophy} className='text-bronze px-1' /></th>
-        </tr>
-      </thead>
-      <tbody>
-        {sortedPlayers.map((player, index) => (
-          <tr key={index} className='text-base'>
-            <td className='px-1 py-1 border'>{player}</td>
-            <td className='px-1 py-1 border text-center'>{players[player].first}</td>
-            <td className='px-1 py-1 border text-center'>{players[player].second}</td>
-            <td className='px-1 py-1 border text-center'>{players[player].third}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+		<div className='w-full flex justify-center lg:justify-start'>
+			<table className='mt-2 border border-collapse lg:mt-4'>
+				<thead>
+					<tr className=''>
+						<th className='border pl-1 text-lg'>Jugador</th>
+						<th className='border pl-1'><FontAwesomeIcon icon={faTrophy} className='text-gold px-1' /></th>
+						<th className='border pl-1'><FontAwesomeIcon icon={faTrophy} className='text-silver px-1' /></th>
+						<th className='border pl-1'><FontAwesomeIcon icon={faTrophy} className='text-bronze px-1' /></th>
+					</tr>
+				</thead>
+				<tbody>
+					{sortedPlayers.map((player, index) => (
+						<tr key={index} className='text-base'>
+							<td className='px-1 py-1 border'>{player}</td>
+							<td className='px-1 py-1 border text-center'>{players[player].first}</td>
+							<td className='px-1 py-1 border text-center'>{players[player].second}</td>
+							<td className='px-1 py-1 border text-center'>{players[player].third}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
   );
 }

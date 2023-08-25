@@ -2,7 +2,7 @@ import React from 'react'
 import { blindsLevels } from '../data/blindsLevels'
 export default function BlindsTable() {
 	return (
-		<div className='BlindsTable | my-6 w-full flex justify-center'>
+		<div className='BlindsTable | my-6 w-full flex justify-center lg:justify-start'>
 			<div>
 				<span className='text-xl'>Estructura de Ciegas:</span>
 				<table className='mt-4 border border-collapse lg:mt-4'>
