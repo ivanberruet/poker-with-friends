@@ -49,22 +49,22 @@ export default function HistoricalTable() {
 
   return (
 		<div className='w-full flex justify-center lg:justify-start'>
-			<table className='mt-2 border  border-collapse lg:mt-4'>
+			<table className='mt-2 border border-collapse lg:mt-4'>
 				<thead>
-					<tr className=''>
-						<th className='border pl-1 text-lg'>Jugador</th>
-						<th className='border pl-1'><FontAwesomeIcon icon={faTrophy} className='text-gold px-1' /></th>
-						<th className='border pl-1'><FontAwesomeIcon icon={faTrophy} className='text-silver px-1' /></th>
-						<th className='border pl-1'><FontAwesomeIcon icon={faTrophy} className='text-bronze px-1' /></th>
+					<tr>
+						<th className='border pl-1 text-lg lg:text-2xl lg:py-6 lg:px-6'>Jugador</th>
+						<th className='border pl-1 text-lg lg:text-4xl lg:py-6 lg:px-6'><FontAwesomeIcon icon={faTrophy} className='text-gold px-1' /></th>
+						<th className='border pl-1 text-lg lg:text-4xl lg:py-6 lg:px-6'><FontAwesomeIcon icon={faTrophy} className='text-silver px-1' /></th>
+						<th className='border pl-1 text-lg lg:text-4xl lg:py-6 lg:px-6'><FontAwesomeIcon icon={faTrophy} className='text-bronze px-1' /></th>
 					</tr>
 				</thead>
 				<tbody>
 					{sortedPlayers.map((player, index) => (
-						<tr key={index} className='text-base'>
-							<td className='px-1 py-1 border'>{player}</td>
-							<td className='px-1 py-1 border text-center'>{players[player].first}</td>
-							<td className='px-1 py-1 border text-center'>{players[player].second}</td>
-							<td className='px-1 py-1 border text-center'>{players[player].third}</td>
+						<tr key={index} className='text-base lg:text-xl'>
+							<td className='px-1 py-1 border lg:px-4 lg:py-2'>{player}</td>
+							<td className='px-1 py-1 border text-center lg:px-4 lg:py-2'>{players[player].first}</td>
+							<td className='px-1 py-1 border text-center lg:px-4 lg:py-2'>{players[player].second}</td>
+							<td className='px-1 py-1 border text-center lg:px-4 lg:py-2'>{players[player].third}</td>
 						</tr>
 					))}
 				</tbody>
