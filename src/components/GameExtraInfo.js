@@ -51,6 +51,7 @@ export default function GameExtraInfo(props) {
 					<div className='flex pt-1'>
 						<span 
 							role='textbox' 
+							contentEditable={true}
 							suppressContentEditableWarning={true}
 							onInput={e => setReentry(isNaN(parseInt(e.currentTarget.innerText)) ? 0 : parseInt(e.currentTarget.innerText))}
 							className=''
