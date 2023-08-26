@@ -6,7 +6,15 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
+}A
 body::-webkit-scrollbar {
 	width: 0 !important
-	}
+}
+.TournamentInfo{
+	background: rgb(3,7,18);
+	background: linear-gradient(180deg, rgba(3,7,18,1) 0%, rgba(44,9,15,1) 25%, rgba(100,11,11,1) 50%, rgba(50,9,15,1) 75%, rgba(3,7,18,1) 100%);
+}
+.Statistics{
+	background: rgb(3,7,18);
+	background: linear-gradient(180deg, rgba(3,7,18,1) 0%, rgba(0,82,0,1) 50%, rgba(3,7,18,1) 100%);
+}
