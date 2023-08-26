@@ -1,13 +1,13 @@
-import Body from "./mainComponents/Body";
-import TournamentInfo from "./components/TournamentInfo";
+import Game from "./mainComponents/Game";
+import Statistics from "./mainComponents/Statistics";
+import TournamentInfo from "./mainComponents/TournamentInfo";
 function App() {
   return (
-    <div className="App | flex flex-col">
-			<div className="Container | min-h-screen flex flex-col">
-				<Body />
-			</div>
+    <div className="App | flex flex-col bg-gray-950">
+			<Game />
 			<TournamentInfo />
-    </div>
+			<Statistics />
+		</div>
   );
 }
 

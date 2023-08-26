@@ -9,7 +9,7 @@ export const blindsLevels = [
 	},
 	{
 		smallBlind: 15,
-		bigBlind: 20
+		bigBlind: 30
 	},
 	{
 		smallBlind: 20,

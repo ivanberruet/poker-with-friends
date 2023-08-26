@@ -49,7 +49,7 @@ export default function HistoricalTable() {
 
   return (
 		<div className='w-full flex justify-center lg:justify-start'>
-			<table className='mt-2 border border-collapse lg:mt-4'>
+			<table className='mt-2 border  border-collapse lg:mt-4'>
 				<thead>
 					<tr className=''>
 						<th className='border pl-1 text-lg'>Jugador</th>

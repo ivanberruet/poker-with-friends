@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import GameInfo from '../components/GameInfo'
 import GameExtraInfo from '../components/GameExtraInfo'
-import Timer from '../components/Timer'
+import GameTimer from '../components/GameTimer'
 
-export default function Body() {
+export default function Game() {
 	const [time, setTime] = useState(15)
 	const [currentLevel, setCurrentLevel] = useState(0)
 	const [isValid, setIsValid] = useState(true)
 	const [isStarted, setIsStarted] = useState(false)
 
 	return (
-		<>
-			<div className='Body | flex-1 h-full flex flex-col bg-poker-table bg-cover'>
+		<div className="Container | min-h-screen flex flex-col">
+			<div className='Game | flex-1 h-full flex flex-col bg-poker-table bg-cover'>
 				<div className="Overlay | w-full flex-1 flex flex-col justify-center items-center backdrop-brightness-50">
 					<GameInfo 
 						time={time} 
@@ -21,7 +21,7 @@ export default function Body() {
 						setIsValid={setIsValid} 
 						isStarted={isStarted} 
 					/>
-					<Timer 
+					<GameTimer 
 						time={time} 
 						setCurrentLevel={setCurrentLevel} 
 						isValid={isValid} 
@@ -31,6 +31,6 @@ export default function Body() {
 					<GameExtraInfo isStarted={isStarted} />
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import audio from '../assets/countdown.mp3'
 
-export default function Timer(props) {
+export default function GameTimer(props) {
 	const {time, setCurrentLevel, isValid, isStarted, setIsStarted} = props
 
 	const [minutes, setMinutes] = useState(time);
@@ -56,20 +56,21 @@ export default function Timer(props) {
   };
 
 	return (
-	<div className="Timer | flex-1 w-full">
-		<div className="w-full py-4 text-6xl text-white text-center lg:text-[10rem]">
+	<div className="GameTimer | flex-1 w-full">
+		<div className="Clock | w-full py-4 text-6xl text-white text-center lg:text-[10rem]">
 			{isStarted
 				? `${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
 				: "00:00"
 			}
 		</div>
-		<div className="flex justify-center gap-10 py-8">
+		<div className="Button_Container | flex justify-center gap-10 py-8">
 			<button
 				disabled={isStarted}
 				className="text-white text-xl border border-gray-300 rounded-md px-4 py-2 shadow-md shadow-black inset-4 lg:text-4xl"
 				onClick={isRunning || isPaused ? handleStop : handleStart}
 			>
 				{isRunning || isPaused ? "Detener" : "Iniciar"}
+				
 			</button>
 			{isRunning || isPaused ? (
 				<button

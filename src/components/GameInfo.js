@@ -1,6 +1,6 @@
 import React, {useRef, useState } from 'react'
 import { blindsLevels } from '../data/blindsLevels'
-import handleReadonly from '../utils/handleReadonly'
+import handleEditable from '../utils/handleEditable'
 
 export default function Info(props) {
 	const {time, setTime, currentLevel, isValid, setIsValid, isStarted} = props
@@ -50,11 +50,17 @@ export default function Info(props) {
 				className={`border ${handleBorder()} outline-none bg-transparent pl-2 w-10 rounded-md outline`} 
 				onChange={()=>setTime(userTime.current.value)} 
 				onBlur={()=>handleBlur()}
-				readOnly={handleReadonly(isStarted)}
+				readOnly={!handleEditable(isStarted)}
 				 />
 			</div>
-			<div className='w-full py-2 text-center lg:text-5xl'>{`Nivel Actual: ${blindsLevels[currentLevel].smallBlind}/${blindsLevels[currentLevel].bigBlind}`}</div>
-			<div className='w-full py-2 text-center'>{`Nivel Siguiente: ${blindsLevels[currentLevel+1].smallBlind}/${blindsLevels[currentLevel+1].bigBlind}`}</div>
+
+			<div className='w-full py-2 text-center lg:text-5xl'>
+				{`Nivel Actual: ${blindsLevels[currentLevel].smallBlind}/${blindsLevels[currentLevel].bigBlind}`}
+			</div>
+
+			<div className='w-full py-2 text-center'>
+				{`Nivel Siguiente: ${blindsLevels[currentLevel+1].smallBlind}/${blindsLevels[currentLevel+1].bigBlind}`}
+			</div>
 		</div>
 	)
 }
