@@ -14,7 +14,7 @@ export default function GameExtraInfo(props) {
 			<div className='Grid_Container | grid grid-cols-2 grid-rows-3 grid-flow-col mb-4 gap-2 place-items-center'>
 				
 				<div className='flex flex-col items-center mb-2 lg:flex-row'>
-					<span>Entrada:</span>
+					<span className='lg:mr-1'>Entrada:</span>
 					<div className='flex pt-1'>
 						<span>$</span>
 						<span 
@@ -31,7 +31,7 @@ export default function GameExtraInfo(props) {
 
 				
 				<div className='flex flex-col items-center lg:flex-row'>
-					<span>Jugadores:</span>
+					<span className='lg:mr-1'>Jugadores:</span>
 					<div className='flex pt-1'>
 						<span 
 							role='textbox' 
@@ -47,7 +47,7 @@ export default function GameExtraInfo(props) {
 
 				
 				<div className='flex flex-col items-center lg:flex-row'>
-					<span>Re-entradas:</span>
+					<span className='lg:mr-1'>Re-entradas:</span>
 					<div className='flex pt-1'>
 						<span 
 							role='textbox' 
@@ -61,7 +61,7 @@ export default function GameExtraInfo(props) {
 				</div>
 				
 				<div className='flex flex-col items-center mb-2 lg:flex-row'>
-					<span>Pozo:</span>
+					<span className='lg:mr-1'>Pozo:</span>
 					<div>
 						<span>$</span>
 						<span>{`${isNaN(players) || isNaN(reentry) ? 0 : (players + reentry) * entry}`}</span>
@@ -69,7 +69,7 @@ export default function GameExtraInfo(props) {
 				</div>
 				
 				<div className='flex flex-col items-center mb-2 lg:flex-row'>
-					<span>1° Puesto:</span>
+					<span className='lg:mr-1'>1° Puesto:</span>
 					<div>
 						<span>$</span>
 						<span>{`${(players + reentry) * entry * 0.85}`}</span>
@@ -77,7 +77,7 @@ export default function GameExtraInfo(props) {
 				</div>
 				
 				<div className='flex flex-col items-center mb-2 lg:flex-row'>
-					<span>2° Puesto:</span>
+					<span className='lg:mr-1'>2° Puesto:</span>
 					<div>
 						<span>$</span>
 						<span>{`${(players + reentry) * entry * 0.15}`}</span>
