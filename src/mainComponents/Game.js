@@ -12,7 +12,7 @@ export default function Game() {
 	return (
 		<div className="Container | min-h-screen flex flex-col">
 			<div className='Game | flex-1 h-full flex flex-col bg-poker-table bg-cover'>
-				<div className="Overlay | w-full flex-1 flex flex-col justify-center items-center backdrop-brightness-50">
+				<div className="Overlay | w-full flex-1 flex flex-col justify-center items-center backdrop-brightness-75">
 					<GameInfo 
 						time={time} 
 						setTime={setTime} 

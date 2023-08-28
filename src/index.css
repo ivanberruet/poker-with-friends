@@ -6,7 +6,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}A
+}
 body::-webkit-scrollbar {
 	width: 0 !important
 }
@@ -17,4 +17,8 @@ body::-webkit-scrollbar {
 .Statistics{
 	background: rgb(3,7,18);
 	background: linear-gradient(180deg, rgba(3,7,18,1) 0%, rgba(0,82,0,1) 50%, rgba(3,7,18,1) 100%);
+}
+.Overlay{
+	background: rgb(3,7,18);
+	background: linear-gradient(180deg, rgba(3,7,18,0) 34%, rgba(3,7,18,1) 100%);
 }

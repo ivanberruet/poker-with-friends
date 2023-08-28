@@ -40,5 +40,5 @@ export const historical = [
 		firstPlace: "Sebastián Benitez",
 		secondPlace: "Silvio Zupancic",
 		thirdPlace: "Gustavo Zupancic",
-	},	
+	},
 ]

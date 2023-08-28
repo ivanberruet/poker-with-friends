@@ -33,6 +33,11 @@ export default function GameTimer(props) {
     return () => clearInterval(intervalId);
   }, [isRunning, minutes, seconds]);
 
+	useEffect(() => {
+		if (isStarted){
+			document.getElementById('StartButton').classList.add('hidden')
+		}
+	},[isStarted])
   const handleStart = () => {
 		if (isValid){
 			setMinutes(parseInt(time));
@@ -57,6 +62,7 @@ export default function GameTimer(props) {
 
 	return (
 	<div className="GameTimer | flex-1 w-full">
+		<div className='hidden lg:flex w-full  justify-center text-white text-2xl'>Próximo nivel en:</div>
 		<div className="Clock | w-full py-4 text-6xl text-white text-center lg:text-[10rem]">
 			{isStarted
 				? `${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
@@ -65,7 +71,7 @@ export default function GameTimer(props) {
 		</div>
 		<div className="Button_Container | flex justify-center gap-10 py-8">
 			<button
-				disabled={isStarted}
+				id='StartButton'
 				className="text-white text-xl border border-gray-300 rounded-md px-4 py-2 shadow-md shadow-black inset-4 lg:text-4xl"
 				onClick={isRunning || isPaused ? handleStop : handleStart}
 			>
