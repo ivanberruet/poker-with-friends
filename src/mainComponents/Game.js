@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import GameInfo from '../components/GameInfo'
-import GameExtraInfo from '../components/GameExtraInfo'
 import GameTimer from '../components/GameTimer'
 
 export default function Game() {
@@ -28,7 +27,10 @@ export default function Game() {
 						isStarted={isStarted} 
 						setIsStarted={setIsStarted}
 					/>
-					<GameExtraInfo isStarted={isStarted} />
+					{/* <GameExtraInfo isStarted={isStarted} />
+					<Time 
+						isStarted={isStarted} 
+					/> */}
 				</div>
 			</div>
 		</div>

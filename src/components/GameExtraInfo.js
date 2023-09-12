@@ -10,7 +10,7 @@ export default function GameExtraInfo(props) {
 	const [reentry, setReentry] = useState(0)
 	
 	return (
-		<div className='ExtraInfo | w-full flex-1 text-white text-lg px-10 font-semibold lg:text-3xl lg:px-80'>
+		<div className='ExtraInfo |flex justify-center w-full flex-1 text-white text-lg px-10 font-semibold lg:text-3xl lg:px-80 lg:py-10'>
 			<div className='Grid_Container | grid grid-cols-2 grid-rows-3 grid-flow-col mb-4 gap-2 place-items-center'>
 				
 				<div className='flex flex-col items-center mb-2 lg:flex-row'>
