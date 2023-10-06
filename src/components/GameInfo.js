@@ -1,6 +1,7 @@
-import React, {useRef, useState } from 'react'
+import React, {useRef, useState, useContext } from 'react'
 import { blindsLevels } from '../data/blindsLevels'
 import handleEditable from '../utils/handleEditable'
+import ChipsInfo from './ChipsInfo' 
 
 export default function Info(props) {
 	const {time, setTime, currentLevel, isValid, setIsValid, isStarted} = props
@@ -40,6 +41,7 @@ export default function Info(props) {
 
 	return (
 		<div className='Info | flex-1 flex flex-col justify-center w-full px-10 text-xl font-semibold text-white lg:text-3xl lg:flex-row lg:items-center'>
+			<ChipsInfo  />
 			<div className='w-full py-2 text-center'>Tiempo por nivel:
 			 <input 
 			 	id='time' 

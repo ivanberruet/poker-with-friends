@@ -1,12 +1,12 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import handleEditable from '../utils/handleEditable'
-
+import {PlayersContext} from '../mainComponents/Game'
 
 export default function GameExtraInfo(props) {
 	const {isStarted} = props
+	const {players, setPlayers} = useContext(PlayersContext)
 	const [entry, setEntry] = useState(3000)
-	const [players, setPlayers] = useState(7)
 	const [reentry, setReentry] = useState(0)
 	
 	return (
@@ -87,5 +87,6 @@ export default function GameExtraInfo(props) {
 			</div>	
 
 		</div>
+
 	)
 }
