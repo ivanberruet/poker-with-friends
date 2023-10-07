@@ -56,7 +56,7 @@ export default function Info(props) {
 				 />
 			</div>
 
-			<div className='w-full py-2 text-center lg:text-6xl'>
+			<div className='w-full py-2 text-center lg:text-5xl'>
 				{`Nivel Actual: ${blindsLevels[currentLevel].smallBlind}/${blindsLevels[currentLevel].bigBlind}`}
 			</div>
 

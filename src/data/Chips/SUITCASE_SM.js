@@ -7,7 +7,7 @@ export const SUITCASE_SM = [
 	{
 	 color: 'blue',
 	 value: '50',
-	 quantity: 25
+	 quantity: 24
 	},
 	{
 	 color: 'green',

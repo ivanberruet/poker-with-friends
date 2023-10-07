@@ -47,5 +47,12 @@ export const historical = [
 		firstPlace: "Gustavo Zupancic",
 		secondPlace: "Iván Berruet",
 		thirdPlace: "Luca Scarlato",
+	},
+	{
+		month: "Octubre",
+		year: "2023",
+		firstPlace: "Silvio Zupancic",
+		secondPlace: "Iván Berruet",
+		thirdPlace: "Gustavo Zupancic",
 	}
 ]

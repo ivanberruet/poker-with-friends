@@ -87,7 +87,7 @@ export default function ChipsInfo() {
 							defaultChecked={true} 
 							onClick={()=>handleCheck()}/>
 					</label>
-					<label className='text-xs flex flex-col gap-1 item-center justify-center' htmlFor="BOX_MM">
+					<label className='text-xs flex flex-col gap-1 item-center justify-center' htmlFor="BOX_MD">
 						<p className='text-center'>Caja (Luca)</p>
 						<input 
 							type="checkbox" 
