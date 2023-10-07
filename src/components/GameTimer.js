@@ -63,7 +63,7 @@ export default function GameTimer(props) {
 					}
 					return prevGameTimeSeconds + 1
 				})
-      }, 1000);
+      }, 100);
     }
     return () => clearInterval(intervalId);
   }, [isRunning, timerMinutes, timerSeconds, isStarted]);
