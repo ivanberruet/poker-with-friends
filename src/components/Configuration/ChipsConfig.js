@@ -47,7 +47,7 @@ export default function ChipsConfig(props) {
 
 	return (
 		<div className={`${className} w-full flex flex-col gap-6`}>
-			<div className='flex gap-3'>
+			<div className='flex flex-col lg:flex-row gap-3'>
 				<p>Los valores asignados a cada color de ficha son:</p>
 				<span className='font-semibold text-white'>Blanca ($5)</span>
 				<span className='font-semibold text-red-500'>Roja ($10)</span>
@@ -58,9 +58,9 @@ export default function ChipsConfig(props) {
 
 			<p>Seleccionar los maletines que se van a usar:</p>
 			
-			<div className='flex gap-12'>
-				<span className='flex flex-col gap-8'>
-					<label className='flex gap-4 item-center' htmlFor="BOX_SM">
+			<div className='flex gap-12 flex-col lg:flex-row'>
+				<span className='flex lg:flex-col gap-1 lg:gap-8 text-base lg:text-lg'>
+					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="BOX_SM">
 						<input 
 							type="checkbox" 
 							name="Caja (Iván)" 
@@ -69,7 +69,7 @@ export default function ChipsConfig(props) {
 							onClick={()=>handleCheck()}/>
 						<p className='text-center'>Caja (Iván)</p>
 					</label>
-					<label className='flex gap-4 item-center' htmlFor="BOX_MD">
+					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="BOX_MD">
 						<input 
 							type="checkbox" 
 							name="Caja (Luca)" 
@@ -78,7 +78,7 @@ export default function ChipsConfig(props) {
 							onClick={()=>handleCheck()}/>
 						<p className='text-center'>Caja (Luca)</p>
 					</label>
-					<label className='flex gap-4 item-center' htmlFor="SUITCASE_SM">
+					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="SUITCASE_SM">
 						<input 
 							type="checkbox" 
 							name="Maletín (Iván)" 
@@ -87,7 +87,7 @@ export default function ChipsConfig(props) {
 							onClick={()=>handleCheck()}/>
 						<p className='text-center'>Maletín (Iván)</p>
 					</label>
-					<label className='flex gap-4 item-center' htmlFor="SUITCASE_MD">
+					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="SUITCASE_MD">
 						<input 
 							type="checkbox" 
 							name="Maletín (Brenda)" 
@@ -96,7 +96,7 @@ export default function ChipsConfig(props) {
 							onClick={()=>handleCheck()}/>
 						<p className='text-center'>Maletín (Brenda)</p>
 					</label>
-					<label className='flex gap-4 item-center' htmlFor="SUITCASE_LG">
+					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="SUITCASE_LG">
 						<input 
 							type="checkbox" 
 							name="Maletín (Seba)" 

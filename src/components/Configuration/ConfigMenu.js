@@ -44,14 +44,15 @@ export default function ConfigMenu(props) {
 	}
 
 	return (
-		<div className='Menu | w-full flex justify-between items-center pr-8'>
-			<ul className='flex'>
+		<div className='Menu | flex flex-col w-full justify-between items-center pr-0
+		lg:flex-row lg:pr-8'>
+			<ul className='flex flex-col w-full lg:flex-row'>
 				<MenuOption id={"Jugadores"} handleClick={handleClick} />
 				<MenuOption id={"Dinero"} handleClick={handleClick} />
 				<MenuOption id={"Tiempo"} handleClick={handleClick} />
 				<MenuOption id={"Fichas"} handleClick={handleClick} />
 			</ul>
-			<FontAwesomeIcon icon={faXmark} className="text-gray-300 text-3xl cursor-pointer" onClick={() => setOpenConfig(!openConfig)} />
+			<FontAwesomeIcon icon={faXmark} className="text-gray-300 text-3xl cursor-pointer absolute top-5 right-8 lg:block" onClick={() => setOpenConfig(!openConfig)} />
 		</div>
 	)
 }

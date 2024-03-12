@@ -11,11 +11,11 @@ export default function GameInfo(props) {
 
 	return (
 		<div className={`Left Section | ${className} text-white flex flex-col items-center`}>
-			<div className='flex flex-col gap-14 text-2xl'>
-				<h1 className='text-5xl underline underline-offset-4'>Información</h1>
-				<p>Fichas en juego: {Intl.NumberFormat('es-AR').format(inGameChips)}</p>
-				<p>Promedio de fichas: {Intl.NumberFormat('es-AR').format(averageChips)} ({averageBlinds} BB)</p>
-				<p>Jugadores restantes: {playersLeft} / {players}</p>
+			<div className='w-min flex flex-col gap-6 lg:gap-14 text-xl lg:text-2xl'>
+				<h1 className='w-full text-4xl lg:text-5xl underline underline-offset-4 text-center lg:text-left'>Información</h1>
+				<p className='w-max'>Fichas en juego: {Intl.NumberFormat('es-AR').format(inGameChips)}</p>
+				<p className='w-max'>Promedio de fichas: {Intl.NumberFormat('es-AR').format(averageChips)} ({averageBlinds} BB)</p>
+				<p className='w-max'>Jugadores restantes: {playersLeft} / {players}</p>
 			</div>
 		</div>
 	)

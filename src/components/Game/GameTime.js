@@ -47,8 +47,8 @@ export default function GameTime(props) {
 		}
 			return(
 				<div className='flex flex-col items-center'>
-					<span className='text-semibold text-white text-2xl absolute top-14 m-auto'>Nivel {currentLevel}</span>
-					<span className='text-bold text-white text-6xl'>{`${minutes}:${seconds}`}</span>
+					<span className='text-semibold text-white text-xl lg:text-2xl absolute top-7 lg:top-14 m-auto'>Nivel {currentLevel}</span>
+					<span className='text-bold text-white text-4xl lg:text-6xl'>{`${minutes}:${seconds}`}</span>
 				</div>
 		)
 	}
@@ -83,9 +83,9 @@ export default function GameTime(props) {
 
 
   return (
-    <div className={`Middle Section | ${className} flex flex-col gap-8`}>
+    <div className={`Middle Section | ${className} flex flex-col gap-6 lg:gap-8`}>
 
-			<div className="Button_Container | flex justify-center gap-10 pb-8">
+			<div className="Button_Container | flex justify-center gap-10 pt-8 pb-0 lg:pb-8 lg:pt-0">
 				<button
 					id='StartButton'
 					className="text-white text-xl border border-gray-300 rounded-md px-4 py-2 shadow-md shadow-black inset-4 lg:text-4xl"
@@ -104,18 +104,18 @@ export default function GameTime(props) {
 			</div>
 
 
-			<div className='CountdownCircleTimer | flex justify-center'>
+			<div className='CountdownCircleTimer | flex justify-center '>
 				<CountdownCircleTimer
 					isPlaying={isRunning}
 					initialRemainingTime={0}
 					duration={time*60}
 					// duration={5} // Para debug
-					size={250}
+					size={window.innerWidth < 1024 ? 150 : 250}
 					colors={['#1A9AEF', '#F7B801', '#A30000', '#A30000']}
 					colorsTime={[time*60*.5, time*60*.25, 90, 0]}
 					// colorsTime={[60, 15, 5, 0]} // Para debug
 					trailColor= 'rgba(0, 0, 0, 0.3)'
-					strokeWidth={16}
+					strokeWidth={window.innerWidth < 1024 ? 12 : 16}
 					onComplete={()=>{ 
 						setCurrentLevel(currentLevel+1)
 						return { shouldRepeat: true, delay: 0 }
@@ -129,9 +129,9 @@ export default function GameTime(props) {
 			{
 				currentLevel !=0 ?
 				<>
-				<GameLevel level={currentLevel-1} msg="Nivel Actual" className="lg:text-5xl"/>
+				<GameLevel level={currentLevel-1} msg="Nivel Actual" className="text-3xl lg:text-5xl"/>
 
-				<GameLevel level={currentLevel} msg="Siguiente Nivel" className="lg:text-2xl" />
+				<GameLevel level={currentLevel} msg="Siguiente Nivel" className="text-lg lg:text-2xl" />
 				</>
 				: null
 			}

@@ -13,6 +13,7 @@ export default function Configuration(props) {
 	const [playersOpen, setPlayersOpen] = useState(false)
 	const [moneyOpen, setMoneyOpen] = useState(false)
 	const sectionsClass  = 'pl-8 py-10 bg-slate-700 text-xl'
+	
 	return (
 		<div className="ConfigurationBox | absolute w-full z-20 flex flex-col items-start text-2xl font-normal text-white bg-slate-800">
 			<ConfigMenu 

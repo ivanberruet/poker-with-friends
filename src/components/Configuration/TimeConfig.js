@@ -21,7 +21,7 @@ export default function TimeConfig(props) {
 	return (
 		<div className={`${className} w-full flex flex-col gap-6`}>
 			<div className='AddingConfigItem | flex'>
-				<p className='mr-2'>Tiempo por nivel (en minutos):</p>
+				<p className='mr-2'>Tiempo por nivel:</p>
 				<span className='flex items-center cursor-pointer' onClick={() => handleMinus(time,setTime)}>
 					<FontAwesomeIcon icon={faMinus} className="text-gold px-2"/>
 				</span>
