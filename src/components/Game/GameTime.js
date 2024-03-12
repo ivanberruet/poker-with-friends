@@ -47,7 +47,7 @@ export default function GameTime(props) {
 		}
 			return(
 				<div className='flex flex-col items-center'>
-					<span className='text-semibold text-white text-xl lg:text-2xl absolute top-7 lg:top-14 m-auto'>Nivel {currentLevel}</span>
+					<span className='text-semibold text-white text-md lg:text-2xl absolute top-7 lg:top-14 m-auto'>Nivel {currentLevel}</span>
 					<span className='text-bold text-white text-4xl lg:text-6xl'>{`${minutes}:${seconds}`}</span>
 				</div>
 		)
@@ -103,7 +103,7 @@ export default function GameTime(props) {
 				) : null}
 			</div>
 
-
+			{/* CountdownCircleTimer */}
 			<div className='CountdownCircleTimer | flex justify-center '>
 				<CountdownCircleTimer
 					isPlaying={isRunning}
