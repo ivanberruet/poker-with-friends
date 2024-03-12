@@ -1,7 +1,7 @@
 import React from 'react'
-import HistoricalTable from '../components/HistoricalTable'
-import HistoricalGames from '../components/HistoricalGames'
-import HistoricalWinners from '../components/HistoricalWinners'
+import HistoricalTable from '../components/Statistics/HistoricalTable'
+import HistoricalGames from '../components/Statistics/HistoricalGames'
+import HistoricalWinners from '../components/Statistics/HistoricalWinners'
 
 export default function Statistics() {
 	return (

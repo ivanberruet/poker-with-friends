@@ -1,5 +1,5 @@
 import React from 'react'
-import { blindsLevels } from '../data/blindsLevels'
+import { blindsLevels } from '../../data/blindsLevels'
 export default function BlindsTable() {
 	return (
 		<div className='BlindsTable | my-6 w-full flex justify-center lg:justify-start'>

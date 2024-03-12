@@ -1,5 +1,5 @@
 import React from 'react'
-import { historical } from '../data/historical';
+import { historical } from '../../data/historical';
 export default function HistoricalGames() {
 	const reversedHistorical = [...historical].reverse();
 

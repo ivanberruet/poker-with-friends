@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useContext } from 'react'
-import handleEditable from '../utils/handleEditable'
-import {PlayersContext} from '../mainComponents/Game'
+import handleEditable from '../../utils/handleEditable'
+import {PlayersContext} from '../../mainComponents/Game'
 
 export default function GameExtraInfo(props) {
 	const {isStarted} = props

@@ -1,5 +1,5 @@
 import React from 'react'
-import { historical } from '../data/historical'
+import { historical } from '../../data/historical'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrophy } from '@fortawesome/free-solid-svg-icons'
 
