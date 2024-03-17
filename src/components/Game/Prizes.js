@@ -3,7 +3,7 @@ import React from 'react'
 export default function Prizes(props) {
 	const {players, eliminatedPlayers, entry, reentry, className, winners, firstPercentage, secondPercentage, thirdPercentage} = props
 	
-	let acumMoney = (players + reentry - eliminatedPlayers) * (entry)
+	let acumMoney = (players + reentry) * (entry)
 
 	let prizes = []
 	let percentages = [firstPercentage, secondPercentage, thirdPercentage]
