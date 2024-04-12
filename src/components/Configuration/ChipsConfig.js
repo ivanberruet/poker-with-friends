@@ -6,9 +6,10 @@ import {BOX_MD} from "../../data/Chips/BOX_MD";
 import {SUITCASE_SM} from "../../data/Chips/SUITCASE_SM";
 import {SUITCASE_MD} from "../../data/Chips/SUITCASE_MD";
 import {SUITCASE_LG} from "../../data/Chips/SUITCASE_LG";
+import {BOX_IVAN_SILVIO} from "../../data/Chips/BOX_IVAN_SILVIO";
 
 export default function ChipsConfig(props) {
-	let chips = [BOX_SM, BOX_MD, SUITCASE_SM,SUITCASE_MD, SUITCASE_LG];
+	let chips = [BOX_SM, BOX_MD, SUITCASE_SM,SUITCASE_MD, SUITCASE_LG, BOX_IVAN_SILVIO];
 	const {className, players, setPlayerChips} = props
 
 	const [chipNumbers, setChipNumbers] = useState(chipsDistribution(players,chips))
@@ -23,6 +24,9 @@ export default function ChipsConfig(props) {
 		 }
 		 if(allChecks[i].id === 'BOX_MD') {
 			chips.push(BOX_MD)
+		 }
+		 if(allChecks[i].id === 'BOX_IVAN_SILVIO') {
+			chips.push(BOX_IVAN_SILVIO)
 		 }
 		 if(allChecks[i].id === 'SUITCASE_SM') {
 			chips.push(SUITCASE_SM)
@@ -77,6 +81,15 @@ export default function ChipsConfig(props) {
 							defaultChecked={true} 
 							onClick={()=>handleCheck()}/>
 						<p className='text-center'>Caja (Luca)</p>
+					</label>
+					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="BOX_IVAN_SILVIO">
+						<input 
+							type="checkbox" 
+							name="Caja (Ivan/Silvio)" 
+							id="BOX_IVAN_SILVIO"
+							defaultChecked={true} 
+							onClick={()=>handleCheck()}/>
+						<p className='text-center'>Caja (Ivan/Silvio)</p>
 					</label>
 					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="SUITCASE_SM">
 						<input 
