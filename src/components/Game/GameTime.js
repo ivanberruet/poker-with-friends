@@ -63,11 +63,11 @@ export default function GameTime(props) {
 		if(isStarted){
 			setGameTimeSeconds(prevGameTimeSeconds => prevGameTimeSeconds + 1);
 
-			if(gameTimeSeconds === 60){
+			if(gameTimeSeconds === 59){
 				setGameTimeSeconds(0);
 				setGameTimeMinutes(prevGameTimeMinutes => prevGameTimeMinutes + 1);
 			}
-			if(gameTimeMinutes === 60){
+			if(gameTimeMinutes === 59){
 				setGameTimeMinutes(0);
 				setGameTimeHours(prevGameTimeHours => prevGameTimeHours + 1);
 			}
@@ -109,6 +109,7 @@ export default function GameTime(props) {
 					isPlaying={isRunning}
 					initialRemainingTime={0}
 					duration={time*60}
+					updateInterval={1}
 					// duration={5} // Para debug
 					size={window.innerWidth < 1024 ? 150 : 250}
 					colors={['#1A9AEF', '#F7B801', '#A30000', '#A30000']}
