@@ -10,7 +10,7 @@ export default function GameInfo(props) {
 	let averageBlinds = Math.round(averageChips/bigBlind)
 
 	return (
-		<div className={`Left Section | ${className} text-white flex flex-col items-center`}>
+		<div className={`Left Section | ${className} text-white flex flex-col items-center w-[366px]`}>
 			<div className='w-min flex flex-col gap-6 lg:gap-14 text-xl lg:text-2xl'>
 				<h1 className='w-full text-4xl lg:text-5xl underline underline-offset-4 text-center lg:text-left'>Información</h1>
 				<p className='w-max'>Fichas en juego: {Intl.NumberFormat('es-AR').format(inGameChips)}</p>
