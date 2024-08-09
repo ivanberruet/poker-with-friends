@@ -54,5 +54,40 @@ export const historical = [
 		firstPlace: "Silvio Zupancic",
 		secondPlace: "Iván Berruet",
 		thirdPlace: "Gustavo Zupancic",
-	}
+	},
+	{
+		month: "Noviembre",
+		year: "2023",
+		firstPlace: "Gustavo Zupancic",
+		secondPlace: "Silvio Zupancic",
+		thirdPlace: "Sebastián Zupancic",
+	},
+	{
+		month: "Marzo",
+		year: "2024",
+		firstPlace: "Silvio Zupancic",
+		secondPlace: "Iván Berruet",
+		thirdPlace: "Andrés Palacios",
+	},
+	{
+		month: "Abril",
+		year: "2024",
+		firstPlace: "Sebastián Zupancic",
+		secondPlace: "Sebastián Benitez",
+		thirdPlace: "Silvio Zupancic",
+	},
+	{
+		month: "Mayo",
+		year: "2024",
+		firstPlace: "Silvio Zupancic",
+		secondPlace: "Sebastián Benitez",
+		thirdPlace: "Gustavo Zupancic",
+	},
+	{
+		month: "Junio",
+		year: "2024",
+		firstPlace: "Sebastián Zupancic",
+		secondPlace: "Wanda",
+		thirdPlace: "Hernán",
+	},
 ]

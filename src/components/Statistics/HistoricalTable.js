@@ -1,5 +1,5 @@
 import React from 'react'
-import { historical } from '../data/historical'
+import { historical } from '../../data/historical'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrophy } from '@fortawesome/free-solid-svg-icons'
 
@@ -48,8 +48,9 @@ export default function HistoricalTable() {
   });
 
   return (
-		<div className='w-full flex justify-center lg:justify-start'>
+		<div className='flex py-4'>
 			<table className='mt-2 border border-collapse lg:mt-4'>
+				<caption className='text-left text-xl lg:text-4xl pb-4'>Podios</caption>
 				<thead>
 					<tr>
 						<th className='border pl-1 text-lg lg:text-2xl lg:py-6 lg:px-6'>Jugador</th>
