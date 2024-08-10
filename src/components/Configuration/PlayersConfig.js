@@ -59,7 +59,7 @@ export default function PlayersConfig( {className, players, setPlayers, entryVal
 		let arr = activeState ? players.activePlayers : players.eliminatedPlayers
 		console.log("arr", arr);
 		
-		const confirmation = confirm(`Are you sure you want to delete ${arr.find(p => p.id === playerId).name}?`)
+		const confirmation = window.confirm(`Are you sure you want to delete ${arr.find(p => p.id === playerId).name}?`)
 
 		if(confirmation){
 			const updatedActivePlayers = players.activePlayers.filter(p => p.id !== playerId)
