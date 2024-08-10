@@ -1,24 +1,24 @@
-export const BOX_IVAN_SILVIO = {
+export const SUITCASE_BRENDA = {
 	active: true,
-	name: 'Caja Ivan (Silvio)',
+	name: 'Maletín Brenda',
 	white: {
 		value: 5,
-		quantity: 50,
+		quantity: 60,
 	 },
 	red: {
 		value: 10,
-		quantity: 50
+		quantity: 60
 	 },
 	green: {
 		value: 25,
-		quantity: 25
+		quantity: 60
 	 },
 	blue: {
 		value: 50,
-		quantity: 50
-	 },
+		quantity: 60
+	 }, 
 	black: {
 		value: 100,
-		quantity: 25
+		quantity: 60
 	 },
 }

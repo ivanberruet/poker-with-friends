@@ -1,153 +1,154 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import	chipsDistribution from '../../utils/chipsDistribution'
-import {BOX_SM} from "../../data/Chips/BOX_SM";
-import {BOX_MD} from "../../data/Chips/BOX_MD";
-import {SUITCASE_SM} from "../../data/Chips/SUITCASE_SM";
-import {SUITCASE_MD} from "../../data/Chips/SUITCASE_MD";
-import {SUITCASE_LG} from "../../data/Chips/SUITCASE_LG";
-import {BOX_IVAN_SILVIO} from "../../data/Chips/BOX_IVAN_SILVIO";
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 export default function ChipsConfig(props) {
-	let chips = [BOX_SM, BOX_MD, SUITCASE_SM,SUITCASE_MD, SUITCASE_LG, BOX_IVAN_SILVIO];
-	const {className, players, setPlayerChips} = props
-
-	const [chipNumbers, setChipNumbers] = useState(chipsDistribution(players,chips))
-	const [totalChips,total_value,player_chips, player_value, remaining_chips, remaining_value] = chipNumbers
 	
-	const handleCheck = () => {
-		let allChecks = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
-		chips = []
-		for (let i=0; i<allChecks.length; i++) {
-		 if(allChecks[i].id === 'BOX_SM') {
-			chips.push(BOX_SM)
-		 }
-		 if(allChecks[i].id === 'BOX_MD') {
-			chips.push(BOX_MD)
-		 }
-		 if(allChecks[i].id === 'BOX_IVAN_SILVIO') {
-			chips.push(BOX_IVAN_SILVIO)
-		 }
-		 if(allChecks[i].id === 'SUITCASE_SM') {
-			chips.push(SUITCASE_SM)
-		 }
-		 if(allChecks[i].id === 'SUITCASE_MD') {
-			chips.push(SUITCASE_MD)
-		 }
-		 if(allChecks[i].id === 'SUITCASE_LG') {
-			chips.push(SUITCASE_LG)
-		 }
-		}
-		setChipNumbers(chipsDistribution(players,chips))
+	const {className, chips, setChips} = props
+
+	const [activeIndex, setActiveIndex] = useState(null);
+
+	// Functions
+	const handleChipsSwitch = (index) => {
+		console.log("ChipsConfig - Execuiting handleChipsSwitch");
+		setChips(chips => ({
+			...chips, 
+			available: chips.available.map((chip, i) => i === index ? {...chip, active: !chip.active} : chip),
+		}))
 	}
 
-	useEffect(() => {
-		setChipNumbers(chipsDistribution(players,chips))
-	},[players])
+	const handleAccordionItemClick = (index) => {
+		setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+	 };
 
-	useEffect(() => {
-		setPlayerChips(player_value)
-	},[chipNumbers])
+
+		// Components
+	const ChipsSwitch = ({state, index}) => (
+		<>
+			<label className="switch">
+				<input type="checkbox" value="" className="sr-only peer" defaultChecked={state} onChange={()=>handleChipsSwitch(index)}></input>
+				<div className="slider"></div>
+				<div className="slider-card">
+					<div className="slider-card-face slider-card-front"></div>
+					<div className="slider-card-face slider-card-back"></div>
+				</div>
+			</label>
+		</>
+	)
+
+	const TableOfChips = () => {
+		return (
+			<div className="mt-4 relative overflow-x-auto shadow-md rounded-lg w-full">
+			<table className="w-full text-sm text-left rtl:text-right text-gray-400">
+				<caption className="p-5 text-lg font-semibold text-left rtl:text-right text-white bg-gray-800">
+					Fichas
+				</caption>
+				<thead className="text-xs lg:text-base text-white uppercase bg-gray-700">
+					<tr>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-white">Cajas / Maletines</th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-white"><FontAwesomeIcon icon={faCircle}  /></th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-red-500"><FontAwesomeIcon icon={faCircle}  /></th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-green-500"><FontAwesomeIcon icon={faCircle}  /></th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-blue-500"><FontAwesomeIcon icon={faCircle}  /></th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-black"><FontAwesomeIcon icon={faCircle}  /></th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-white">En uso</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody className="text-xs lg:text-base">
+					{chips.available.map((box, index) => (
+						<tr key={index} className="odd:bg-gray-900 even:bg-gray-800 border-b border-gray-700 font-semibold">
+							<td className="px-2 lg:px-6 py-1 lg:py-4 text-white min-w-[100px]">{box.name}</td>
+							<td className="px-2 lg:px-6 py-1 lg:py-4">{box.white.quantity}</td>
+							<td className="px-2 lg:px-6 py-1 lg:py-4">{box.red.quantity}</td>
+							<td className="px-2 lg:px-6 py-1 lg:py-4">{box.green.quantity}</td>
+							<td className="px-2 lg:px-6 py-1 lg:py-4">{box.blue.quantity}</td>
+							<td className="px-2 lg:px-6 py-1 lg:py-4">{box.black.quantity}</td>
+							<td className='px-2 lg:px-6 py-1 lg:py-4'><ChipsSwitch state={box.active} index={index} /></td>	
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+		)
+	}
+
+	const TableOfChipsDistribution = () => {
+		return (
+			<div className="mt-4 relative overflow-x-auto shadow-md rounded-lg w-full">
+			<table className="w-full text-sm text-left rtl:text-right text-gray-400">
+				<caption className="p-5 text-lg font-semibold text-left rtl:text-right text-white bg-gray-800">
+					Fichas
+				</caption>
+				<thead className="text-xs lg:text-base text-white uppercase bg-gray-700">
+					<tr>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3"></th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-white"><FontAwesomeIcon icon={faCircle}  /></th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-red-500"><FontAwesomeIcon icon={faCircle}  /></th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-green-500"><FontAwesomeIcon icon={faCircle}  /></th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-blue-500"><FontAwesomeIcon icon={faCircle}  /></th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3 text-black"><FontAwesomeIcon icon={faCircle}  /></th>
+						<th scope="col" className="p-2 lg:px-6 lg:py-3">Valor</th>
+					</tr>
+				</thead>
+				<tbody className="text-xs lg:text-base">
+					{chips.toBeUsed.map((item, index) => (
+						<tr key={index} className="odd:bg-gray-900 even:bg-gray-800 border-b border-gray-700 font-semibold">
+							<td className="px-2 lg:px-6 py-1 lg:py-4 text-white min-w-[100px]">{item.label}</td>
+							<td className="px-2 lg:px-6 py-1 lg:py-4">{item.white.quantity}</td>
+							<td className="px-2 lg:px-6 py-1 lg:py-4">{item.red.quantity}</td>
+							<td className="px-2 lg:px-6 py-1 lg:py-4">{item.green.quantity}</td>
+							<td className="px-2 lg:px-6 py-1 lg:py-4">{item.blue.quantity}</td>
+							<td className="px-2 lg:px-6 py-1 lg:py-4">{item.black.quantity}</td>
+							<td className="px-2 lg:px-6 py-1 lg:py-4 text-white">{item.value}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+		)
+	}
+
+	const accordionData = [
+		{title: "Fichas disponibles", children: <TableOfChips />},
+		{title: "Distribución de fichas", children: <TableOfChipsDistribution />},
+	]
+
+	// Accordion
+	const AccordionItem = ({title, children, isOpen, onClick}) => {
+		return (
+			<div className="Wrapper | lg:w-[50%] flex flex-col gap-4 ">
+
+				<button className={`w-full flex justify-between border-b border-gray-300 dark:border-gray-600 py-1`} onClick={onClick}>
+					<h1>{title}</h1>
+					{isOpen ? <FontAwesomeIcon icon={faChevronUp} className="w-5 h-5"/> : <FontAwesomeIcon icon={faChevronDown} className="w-5 h-5" />}
+				</button>
+
+				<div className={`w-full ${isOpen ? 'visible' : 'collapse h-0'}`}>
+					{children}
+				</div>
+
+			</div>
+		)
+	}
+
+	// Debug
+	// console.log("ChipsConfig - chips", chips);
 
 	return (
-		<div className={`${className} w-full flex flex-col gap-6`}>
-			<div className='flex flex-col lg:flex-row gap-3'>
-				<p>Los valores asignados a cada color de ficha son:</p>
-				<span className='font-semibold text-white'>Blanca ($5)</span>
-				<span className='font-semibold text-red-500'>Roja ($10)</span>
-				<span className='font-semibold text-green-500'>Verde($25)</span>
-				<span className='font-semibold text-blue-500'>Azul ($50)</span>
-				<span className='font-semibold text-black'>Negra ($100)</span>
-			</div>
+		<div className={`${className} w-full flex flex-col gap-6 | ChipsConfig`}>
 
-			<p>Seleccionar los maletines que se van a usar:</p>
-			
-			<div className='flex gap-12 flex-col lg:flex-row'>
-				<span className='flex lg:flex-col gap-1 lg:gap-8 text-base lg:text-lg'>
-					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="BOX_SM">
-						<input 
-							type="checkbox" 
-							name="Caja (Iván)" 
-							id="BOX_SM"
-							defaultChecked={true} 
-							onClick={()=>handleCheck()}/>
-						<p className='text-center'>Caja (Iván)</p>
-					</label>
-					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="BOX_MD">
-						<input 
-							type="checkbox" 
-							name="Caja (Luca)" 
-							id="BOX_MD"
-							defaultChecked={true} 
-							onClick={()=>handleCheck()}/>
-						<p className='text-center'>Caja (Luca)</p>
-					</label>
-					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="BOX_IVAN_SILVIO">
-						<input 
-							type="checkbox" 
-							name="Caja (Ivan/Silvio)" 
-							id="BOX_IVAN_SILVIO"
-							defaultChecked={true} 
-							onClick={()=>handleCheck()}/>
-						<p className='text-center'>Caja (Ivan/Silvio)</p>
-					</label>
-					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="SUITCASE_SM">
-						<input 
-							type="checkbox" 
-							name="Maletín (Iván)" 
-							id="SUITCASE_SM"
-							defaultChecked={true} 
-							onClick={()=>handleCheck()}/>
-						<p className='text-center'>Maletín (Iván)</p>
-					</label>
-					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="SUITCASE_MD">
-						<input 
-							type="checkbox" 
-							name="Maletín (Brenda)" 
-							id="SUITCASE_MD"
-							defaultChecked={true} 
-							onClick={()=>handleCheck()}/>
-						<p className='text-center'>Maletín (Brenda)</p>
-					</label>
-					<label className='flex flex-col lg:flex-row gap-4 item-center' htmlFor="SUITCASE_LG">
-						<input 
-							type="checkbox" 
-							name="Maletín (Seba)" 
-							id="SUITCASE_LG"
-							defaultChecked={true} 
-							onClick={()=>handleCheck()}/>
-						<p className='text-center'>Maletín (Seba)</p>
-					</label>
-				</span>
-
-				<span className='flex flex-col gap-1'>
-					<p className='font-bold'>Fichas Totales: ${total_value}</p> 
-					<p className='font-semibold text-black'>Negras: {totalChips.black}</p> 
-					<p className='font-semibold text-blue-500'>Azules: {totalChips.blue}</p> 
-					<p className='font-semibold text-green-500'>Verdes: {totalChips.green}</p> 
-					<p className='font-semibold text-red-500'>Rojas: {totalChips.red}</p> 
-					<p className='font-semibold text-white'>Blancas: {totalChips.white}</p> 
-				</span>
-
-				<span className='flex flex-col gap-1'>
-					<p className='font-bold'>Fichas por jugador: ${player_value}</p> 
-					<p className='font-semibold text-black'>Negras: {player_chips.black}</p> 
-					<p className='font-semibold text-blue-500'>Azules: {player_chips.blue}</p> 
-					<p className='font-semibold text-green-500'>Verdes: {player_chips.green}</p> 
-					<p className='font-semibold text-red-500'>Rojas: {player_chips.red}</p> 
-					<p className='font-semibold text-white'>Blancas: {player_chips.white}</p> 
-				</span>
-
-				<span className='flex flex-col gap-1'>
-					<p className='font-bold'>Fichas sobrantes: ${remaining_value}</p> 
-					<p className='font-semibold text-black'>Negras: {remaining_chips.black}</p> 
-					<p className='font-semibold text-blue-500'>Azules: {remaining_chips.blue}</p> 
-					<p className='font-semibold text-green-500'>Verdes: {remaining_chips.green}</p> 
-					<p className='font-semibold text-red-500'>Rojas: {remaining_chips.red}</p> 
-					<p className='font-semibold text-white'>Blancas: {remaining_chips.white}</p> 
-				</span>
-			</div>
-
+			{accordionData.map((item, index) => (
+				<AccordionItem
+					key={index}
+					title={item.title}
+					children={item.children}
+					isOpen={activeIndex === index}
+					onClick={() => handleAccordionItemClick(index)}
+				/>
+			))}
 		</div>
 	)
 }

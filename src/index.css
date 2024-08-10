@@ -7,7 +7,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-body::-webkit-scrollbar {
+body::-webkit-scrollbar{
 	width: 0 !important
 }
 .TournamentInfo{
@@ -21,4 +21,174 @@ body::-webkit-scrollbar {
 .Overlay{
 	background: rgb(3,7,18);
 	background: linear-gradient(180deg, rgba(3,7,18,0) 34%, rgba(3,7,18,1) 100%);
+}
+.active{
+	background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+}
+
+
+/* Delete Button */
+.bin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgb(255, 95, 95);
+  cursor: pointer;
+  border: 2px solid rgb(255, 201, 201);
+  transition-duration: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.bin-bottom {
+  width: 9px;
+  z-index: 2;
+}
+.bin-top {
+  width: 11px;
+  transform-origin: right;
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
+}
+.bin-button:hover {
+  background-color: rgb(255, 0, 0);
+}
+.bin-button:active {
+  transform: scale(0.9);
+}
+.garbage {
+  position: absolute;
+  width: 14px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.bin-button:hover .garbage {
+  animation: throw 0.4s linear;
+}
+@keyframes throw {
+  from {
+    transform: translate(-400%, -700%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
+
+/* Active Siwtch */
+.switch {
+  --circle-dim: 1.4em;
+  font-size: 10px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f5aeae;
+  transition: .4s;
+  border-radius: 30px;
+}
+.slider-card {
+  position: absolute;
+  content: "";
+  height: var(--circle-dim);
+  width: var(--circle-dim);
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  transition: .4s;
+  pointer-events: none;
+}
+.slider-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  border-radius: 50%;
+  transition: .4s transform;
+}
+.slider-card-front {
+  background-color: #DC3535;
+}
+.slider-card-back {
+  background-color: #379237;
+  transform: rotateY(180deg);
+}
+input:checked ~ .slider-card .slider-card-back {
+  transform: rotateY(0);
+}
+input:checked ~ .slider-card .slider-card-front {
+  transform: rotateY(-180deg);
+}
+input:checked ~ .slider-card {
+  transform: translateX(1.5em);
+}
+input:checked ~ .slider {
+  background-color: #9ed99c;
+}
+
+/* MoneyConfig Input */
+.MoneyConfig .input, .PlayersConfig .input {
+  max-width: 190px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
+  outline: none;
+  color: dimgray;
+}
+.MoneyConfig .input::placeholder {
+	font-size: 14px;
+}
+.MoneyConfig .input:invalid {
+  animation: justshake 0.3s forwards;
+  color: red;
+}
+
+@keyframes justshake {
+  25% {
+    transform: translateX(5px);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX-(5px);
+  }
+}
+
+label:not(.switch){
+	min-width: 200px;
+}
+@media screen and (max-width: 768px) {
+	label:not(.switch){
+		min-width: unset;
+	}
+	
 }

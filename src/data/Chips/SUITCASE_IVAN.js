@@ -1,6 +1,6 @@
-export const BOX_IVAN_SILVIO = {
+export const SUITCASE_IVAN = {
 	active: true,
-	name: 'Caja Ivan (Silvio)',
+	name: 'Maletín Iván',
 	white: {
 		value: 5,
 		quantity: 50,
@@ -11,12 +11,12 @@ export const BOX_IVAN_SILVIO = {
 	 },
 	green: {
 		value: 25,
-		quantity: 25
+		quantity: 50
 	 },
 	blue: {
 		value: 50,
-		quantity: 50
-	 },
+		quantity: 25
+	 }, 
 	black: {
 		value: 100,
 		quantity: 25

@@ -1,11 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: [
+		"./src/**/*.{html,js}",
+		"./node_modules/flowbite/**/*.js"
+	],
   theme: {
     extend: {
 			backgroundImage: {
         'poker-table': "url('./assets/poker-table.jpg')",
         'poker-table-big': "url('./assets/poker-table-big.jpg')",
+        'darkBlue': "url('./assets/bg-1.jpg')",
       },
 			colors: {
 				bronze: "rgb(205, 127, 50)",
@@ -14,5 +18,7 @@ module.exports = {
 			}
 		},
   },
-  plugins: [],
+  plugins: [
+		require('flowbite/plugin')
+	],
 }
