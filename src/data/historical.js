@@ -90,4 +90,18 @@ export const historical = [
 		secondPlace: "Wanda",
 		thirdPlace: "Hernán",
 	},
+	{
+		month: "Julio",
+		year: "2024",
+		firstPlace: "Gustavo Zupancic",
+		secondPlace: "Sebastián Benítez",
+		thirdPlace: "Francisco Zupancic",
+	},
+	{
+		month: "Agosto",
+		year: "2024",
+		firstPlace: "Sebastián Zupancic",
+		secondPlace: "Gustavo Zupancic",
+		thirdPlace: "Sebastián Benítez",
+	},
 ]
